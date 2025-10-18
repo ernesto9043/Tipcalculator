@@ -37,7 +37,8 @@
                     Grid.Row="0"
                     Grid.Column="1"
                     FontSize="Small"
-                    x:Name="ConsumoEntry"/>
+                    x:Name="ConsumoEntry"
+                    Text="{Binding Path=ImporteDelConsumo}"/>
                 <Label
                     Text="#Personas:"
                     Grid.Row="1"
@@ -47,17 +48,19 @@
                     Grid.Row="1"
                     Grid.Column="1"
                     FontSize="Small"
-                    x:Name="PersonasEntry"/>
+                    x:Name="PersonasEntry"
+                    Text="{Binding Path=NumerodePersonas}"/>
                 <Label
                     Text="%Propinas:"
                     Grid.Row="2"
                     Grid.Column="0"
                     FontSize="Small"/>
-                <Entry
+                <Entry                  
                     Grid.Row="2"
                     Grid.Column="1"
                     FontSize="Small"
-                    x:Name="PropinasEntry"/>
+                    x:Name="PropinasEntry"
+                    Text="{Binding Path=PorcentajeDePropina}"/>
             </Grid>
         </Border>
 
@@ -103,7 +106,7 @@
                      FontSize="Medium"
                      Grid.Row="0"  
                      Grid.Column="1"                   
-                     Text=""
+                     Text="{Binding Path=ImportePropina}"
                      x:Name="PropinaLabel"/>
 
                 <Label
@@ -115,7 +118,7 @@
                 <Label
                      HorizontalOptions="Center"
                      FontAttributes="Bold"
-                     Text=""
+                     Text="{Binding Path=ImporteTotal}"
                      FontSize="Medium"
                      Grid.Row="1"
                      Grid.Column="1"
@@ -130,7 +133,7 @@
                 <Label
                      HorizontalOptions="Center"
                      FontAttributes="Bold"
-                     Text=""
+                     Text="{Binding Path=PropinaPorPersona}"
                      FontSize="Medium"
                      Grid.Row="2"
                      Grid.Column="1"
@@ -145,7 +148,7 @@
                 <Label
                      HorizontalOptions="Center"
                      FontAttributes="Bold"
-                     Text=""
+                     Text="{Binding Path=TotalPorPersona}"
                      FontSize="Medium"
                      Grid.Row="3"
                      Grid.Column="1"
