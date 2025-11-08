@@ -3,11 +3,11 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TipCalculator.MainPage"
-             Title="Calculadora de Propina">
+             Title="Calculadora de Propinas">
 
     <Grid
         Margin="24"
-        RowSpacing="24">
+        RowSpacing="28">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -23,9 +23,9 @@
             Stroke="Gray">
 
             <Grid                               
-                RowDefinitions="auto,auto,auto"
+                RowDefinitions="auto,auto,auto,auto"
                 RowSpacing="6"
-                ColumnDefinitions="Auto, *">
+                ColumnDefinitions="Auto, * , auto">
                 <!--ColumnSpacing="16"-->
 
                 <Label                   
@@ -49,18 +49,48 @@
                     Grid.Column="1"
                     FontSize="Small"
                     x:Name="PersonasEntry"
-                    Text="{Binding Path=NumerodePersonas}"/>
+                    Text="{Binding Path=NumeroDePersonas}"/>
+
+                <!--Stepper
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    BackgroundColor="Blue"
+                    VerticalOptions="Fill"/-->
+
+                <!--HorizontalStackLayout
+                    Grid.Row="2"
+                    Grid.ColumnSpan="3"
+                    HorizontalOptions="Center"
+                    Spacing="16">
+                    <Button
+                        Text="8%"
+                        WidthRequest="70"/>
+                    <Button
+                        Text="10%"
+                        WidthRequest="70"/>
+                    <Button
+                        Text="12.5%"
+                        WidthRequest="70"/>
+                    <Button
+                        Text="15%"
+                        WidthRequest="70"/>
+                </HorizontalStackLayout-->
+                
                 <Label
                     Text="%Propinas:"
-                    Grid.Row="2"
+                    Grid.Row="3"
                     Grid.Column="0"
                     FontSize="Small"/>
                 <Entry                  
-                    Grid.Row="2"
+                    Grid.Row="3"
                     Grid.Column="1"
                     FontSize="Small"
                     x:Name="PropinasEntry"
                     Text="{Binding Path=PorcentajeDePropina}"/>
+                <!--Stepper
+                    Grid.Row="3"
+                    Grid.Column="2"
+                    BackgroundColor="LightGrey"/-->
             </Grid>
         </Border>
 
@@ -74,11 +104,11 @@
             <Button
                 FontSize="Small"
                 Text="Calcular"
-                Clicked="OnCalcularButtonClicked"/>
+                Command="{Binding Path=CalcularCommand}"/>
             <Button
                 FontSize="Small"
                 Text="Limpiar"
-                Clicked="OnLimpiarButtonClicked"/>
+                Command="{Binding Path=LimpiarCommand}"/>
         </HorizontalStackLayout>
 
         <Border
@@ -113,12 +143,12 @@
                      FontSize="Small"
                      Grid.Row="1"  
                      Grid.Column="0"
-                     Text="Importe total: "/>
+                     Text="Propina por persona: "/>
 
                 <Label
                      HorizontalOptions="Center"
                      FontAttributes="Bold"
-                     Text="{Binding Path=ImporteTotal}"
+                     Text="{Binding Path=PropinaPorPersona}"
                      FontSize="Medium"
                      Grid.Row="1"
                      Grid.Column="1"
@@ -128,12 +158,12 @@
                      FontSize="Small"
                      Grid.Row="2"  
                      Grid.Column="0"
-                     Text="Importe de la propina por persona: "/>
+                     Text="Importe total por persona: "/>
 
                 <Label
                      HorizontalOptions="Center"
                      FontAttributes="Bold"
-                     Text="{Binding Path=PropinaPorPersona}"
+                     Text="{Binding Path=ImporteTotalPorPersona}"
                      FontSize="Medium"
                      Grid.Row="2"
                      Grid.Column="1"
@@ -143,12 +173,12 @@
                      FontSize="Small"
                      Grid.Row="3"  
                      Grid.Column="0"
-                     Text="Importe total por persona: "/>
+                     Text="Importe total del consumo: "/>
 
                 <Label
                      HorizontalOptions="Center"
                      FontAttributes="Bold"
-                     Text="{Binding Path=TotalPorPersona}"
+                     Text="{Binding Path=ImporteTotalDelConsumo}"
                      FontSize="Medium"
                      Grid.Row="3"
                      Grid.Column="1"
