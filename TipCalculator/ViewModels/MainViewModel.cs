@@ -18,7 +18,7 @@ namespace TipCalculator.ViewModels
         private string _numeroDePersonas = "1";
 
         [ObservableProperty]
-        private string _porcentajeDePropina = string.Empty;
+        private string _porcentajeDePropina = "10";
 
         [ObservableProperty]
         private string _importePropina = string.Empty;
@@ -61,6 +61,11 @@ namespace TipCalculator.ViewModels
             ImporteTotalPorPersona = string.Empty;
             ImporteTotalDelConsumo = string.Empty;
 
+        }
+        [RelayCommand]
+        private void SetPropina(string porcentaje)
+        {
+            PorcentajeDePropina = porcentaje;
         }
     }
 }
